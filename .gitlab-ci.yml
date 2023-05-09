@@ -23,6 +23,8 @@ arm64:
   stage: build
   parallel:
     matrix:
+    - ARCH:
+      - arm64
       OS:
       - alpine_3
       - deb_10
@@ -32,13 +34,12 @@ arm64:
       - ubuntu_20
       - ubuntu_22
   script:
-  - echo "${DOCKERHUB_TOKEN}" | docker login --username "${DOCKERHUB_USER}" --password-stdin
   - cd ${OS}
   - docker build -t pegasus/buildenv:${OS} --push .
   artifacts: {}
   dependencies: []
   tags:
-  - macOS-13
+  - ${ARCH}
   - docker-cli
 
 amd64:
@@ -64,5 +65,5 @@ amd64:
   artifacts: {}
   dependencies: []
   tags:
-  - x86_64
+  - ${ARCH}
   - docker-cli
