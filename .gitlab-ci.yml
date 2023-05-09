@@ -38,7 +38,7 @@ Docker Images:
       - ubuntu_22
   script:
   - cd ${OS}
-  - docker buildx buildx --platform linux/arm64,linux/amd64 -t pegasus/buildenv:${OS} --push .
+  - docker buildx build --platform linux/arm64,linux/amd64 -t pegasus/buildenv:${OS} --push .
   tags:
   - macOS
   - docker-cli
