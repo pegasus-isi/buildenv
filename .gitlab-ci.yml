@@ -17,7 +17,7 @@ default:
 stages:
 - build
 
-RHEL:
+Builds:
   <<: *retry-and-timeout
   stage: build
   parallel:
@@ -26,15 +26,28 @@ RHEL:
       - x86_64
       - arm64
       OS:
+      - alpine_3
+      - deb_10
+      - deb_11
       - rhel_7
       - rhel_8
       - rhel_9
+      - ubuntu_18
+      - ubuntu_20
+      - ubuntu_22
   script:
   - echo "${DOCKERHUB_TOKEN}" | docker login --username "${DOCKERHUB_USER}" --password-stdin
   - cd ${OS}
   - docker buildx build --platform linux/${ARCH} -t pegasus/buildenv:${OS} --push .
   artifacts: {}
   dependencies: []
+  rules:
+  # Do not build arm64 packages for some platforms. Last if statment has to eval true
+  - if: $ARCH == 'arm64' && $OS == 'rhel_7'
+    when: never
+  - if: $ARCH == 'arm64' && $OS == 'ubuntu_18'
+    when: never
+  - if: $ARCH == $ARCH
   tags:
   - macOS-13
   - shell
