@@ -18,15 +18,12 @@ default:
 stages:
 - build
 
-Docker Images:
+Pegasus Docker Build Images:
   <<: *retry-and-timeout
   stage: build
   parallel:
     matrix:
-    - ARCH:
-      - amd64
-      - arm64
-      OS:
+    - OS:
       - alpine_3
       - deb_10
       - deb_11
@@ -38,7 +35,7 @@ Docker Images:
       - ubuntu_22
   script:
   - cd ${OS}
-  - docker buildx build --platform linux/arm64,linux/amd64 -t pegasus/buildenv:${OS} --push .
+  - docker buildx build --builder multiarch-builder --platform linux/arm64,linux/amd64 --tag pegasus/buildenv:${OS} --push .
   tags:
-  - macOS
   - docker-cli
+  - docker-multiarch
