@@ -22,6 +22,8 @@ RUN yum -y install \
         libffi-devel \
         libseccomp-devel \
         libuuid-devel \
+        libxml2-devel \
+        libxslt-devel \
         make \
         mpich-devel \
         mysql-devel \
