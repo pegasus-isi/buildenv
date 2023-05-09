@@ -32,8 +32,8 @@ RHEL:
   script:
   - echo "${DOCKERHUB_TOKEN}" | docker login --username "${DOCKERHUB_USER}" --password-stdin
   - cd ${OS}
-  - docker buildx build --platform linux/amd64 -t pegasus/buildenv:${OS} --push .
-  artifacts: []
+  - docker buildx build --platform linux/${ARCH} -t pegasus/buildenv:${OS} --push .
+  artifacts: {}
   dependencies: []
   tags:
   - macOS-13
