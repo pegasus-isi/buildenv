@@ -20,6 +20,8 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=powertools \
         glibc-langpack-en \
         java-11-openjdk-devel \
         libffi-devel \
+        libxml2-devel \
+        libxslt-devel \
         make \
         mpich-devel \
         mysql-devel \
