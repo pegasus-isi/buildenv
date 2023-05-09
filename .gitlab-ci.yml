@@ -1,0 +1,41 @@
+default:
+  before_script:
+    - env
+
+.retry-and-timeout: &retry-and-timeout
+  retry:
+    max: 2
+    when:
+    - job_execution_timeout
+    - stuck_or_timeout_failure
+    - api_failure
+    - runner_system_failure
+    - script_failure
+    - unknown_failure
+  timeout: 20 minutes
+
+stages:
+- build
+
+RHEL:
+  <<: *retry-and-timeout
+  stage: build
+  parallel:
+    matrix:
+    - ARCH:
+      - x86_64
+      - arm64
+      OS:
+      - rhel_7
+      - rhel_8
+      - rhel_9
+  script:
+  - echo "${DOCKERHUB_TOKEN}" | docker login --username "${DOCKERHUB_USER}" --password-stdin
+  - cd ${OS}
+  - docker buildx build --platform linux/amd64 -t pegasus/buildenv:${OS} --push .
+  artifacts: []
+  dependencies: []
+  tags:
+  - macOS-13
+  - shell
+
