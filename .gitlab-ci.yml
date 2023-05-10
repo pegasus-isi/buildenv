@@ -35,7 +35,8 @@ Pegasus Docker Build Images:
       - ubuntu_22
   script:
   - cd ${OS}
-  - docker buildx build --builder multiarch-builder --platform linux/arm64,linux/amd64 --tag pegasus/buildenv:${OS} --progress plain --push .
+  - \[ ${OS} = 'rhel_7' ] && PLATFORM='linux/amd64' || XPLATFORM='linux/amd64,linux/arm64'
+  - docker buildx build --builder multiarch-builder --platform ${PLATFORM} --tag pegasus/buildenv:${OS} --progress plain --push .
   tags:
   - docker-cli
   - docker-multiarch
