@@ -13,7 +13,6 @@ RUN yum -y install \
         bzip2-devel \
         cryptsetup \
         curl-devel \
-        epel-release \
         gcc \
         gcc-c++ \
         git \
@@ -52,13 +51,13 @@ RUN yum -y install \
         wget \
         which \
         yum-plugin-priorities \
-        zlib-devel 
+        zlib-devel
 
 # Python test requirements - FIXME: not a great idea to use pip3 install in this container
 RUN pip3 install tox==3.20.1
 
 # Documentation - FIXME: not a great idea to use pip3 install in this container
-RUN pip3 install sphinx recommonmark sphinx_rtd_theme sphinxcontrib-openapi javasphinx mistune==0.8.4
+#RUN pip3 install sphinx recommonmark sphinx_rtd_theme sphinxcontrib-openapi javasphinx mistune==0.8.4
 
 # Set Timezone
 RUN cp /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
