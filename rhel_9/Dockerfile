@@ -1,8 +1,5 @@
 FROM rockylinux:9
 
-#%environment
-#    PATH=/usr/lib64/mpich/bin:/usr/local/bin:/usr/bin:/bin
-
 RUN dnf -y update
 RUN dnf -y install epel-release
 
@@ -39,13 +36,10 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=devel \
         tar \
         wget \
         which \
-        zlib-devel
+        zlib-devel && \
+    pip3 install tox
 
-# Python test requirements - FIXME: not a great idea to use pip3 install in this container
-RUN pip3 install tox
-
-# Documentation - FIXME: not a great idea to use pip3 install in this container
-#RUN pip3 install sphinx recommonmark sphinx_rtd_theme sphinxcontrib-openapi javasphinx mistune==0.8.4
+ENV PATH=/usr/lib64/mpich/bin:/usr/local/bin:/usr/bin:/bin
 
 # Set Timezone
 RUN cp /usr/share/zoneinfo/America/Los_Angeles /etc/localtime

@@ -1,9 +1,5 @@
 FROM centos:7
 
-#%environment
-#    # needed for python test
-#    export LANG=en_US.UTF-8
-
 RUN yum -y install epel-release
 RUN yum -y install ant | /bin/true
 RUN yum -y install \
@@ -51,13 +47,10 @@ RUN yum -y install \
         wget \
         which \
         yum-plugin-priorities \
-        zlib-devel
+        zlib-devel && \
+    pip3 install tox==3.20.1
 
-# Python test requirements - FIXME: not a great idea to use pip3 install in this container
-RUN pip3 install tox==3.20.1
-
-# Documentation - FIXME: not a great idea to use pip3 install in this container
-#RUN pip3 install sphinx recommonmark sphinx_rtd_theme sphinxcontrib-openapi javasphinx mistune==0.8.4
+ENV PATH=/usr/lib64/mpich/bin:/usr/local/bin:/usr/bin:/bin
 
 # Set Timezone
 RUN cp /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
