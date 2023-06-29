@@ -36,10 +36,12 @@ RUN apt-get -y update && \
         tar \
         texlive-fonts-recommended \
         texlive-latex-base \
-        tox \
         wget \
     && \
     apt-get -y clean
+
+# Documentation
+RUN pip3 install --break-system-packages --upgrade pip setuptools==45.3.0 tox
 
 # Set Timezone
 RUN cp /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
