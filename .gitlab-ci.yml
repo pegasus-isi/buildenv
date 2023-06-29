@@ -27,6 +27,7 @@ Pegasus Docker Build Images:
       - alpine_3
       - deb_10
       - deb_11
+      - deb_12
       - rhel_7
       - rhel_8
       - rhel_9
