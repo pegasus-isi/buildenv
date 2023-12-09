@@ -1,6 +1,7 @@
 FROM debian:buster
 
 RUN apt-get -y update && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y install ca-certificates-java && \
     DEBIAN_FRONTEND=noninteractive apt-get -y install \
         ant \
         ant-optional \
