@@ -34,6 +34,7 @@ Pegasus Docker Build Images:
       - ubuntu_18
       - ubuntu_20
       - ubuntu_22
+      - ubuntu_24
   script:
   - cd ${OS}
   - docker buildx build --builder multiarch-builder --platform linux/amd64,linux/arm64 --tag pegasus/buildenv:${OS} --progress plain --push .
