@@ -14,6 +14,7 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=devel \
         git \
         glibc-langpack-en \
         java-11-openjdk-devel \
+        latexmk \
         libffi-devel \
         make \
         mpich-devel \
@@ -34,6 +35,7 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=devel \
         rpm-build \
         sqlite-devel \
         tar \
+        texlive-* \
         wget \
         which \
         zlib-devel && \
