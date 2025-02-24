@@ -13,7 +13,7 @@ default:
     - runner_system_failure
     - script_failure
     - unknown_failure
-  timeout: 20 minutes
+  timeout: 40 minutes
 
 stages:
 - build
@@ -28,9 +28,9 @@ Pegasus Docker Build Images:
       - deb_10
       - deb_11
       - deb_12
-      #- rhel_7
       - rhel_8
       - rhel_9
+      - rhel_10
       - ubuntu_18
       - ubuntu_20
       - ubuntu_22
