@@ -13,7 +13,7 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=devel \
         gcc-c++ \
         git \
         glibc-langpack-en \
-        java-11-openjdk-devel \
+        java-21-openjdk-devel \
         latexmk \
         libffi-devel \
         make \
