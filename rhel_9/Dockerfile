@@ -8,11 +8,13 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=devel \
         ant-junit \
         bc \
         bzip2-devel \
+        createrepo \
         curl-devel \
         gcc \
         gcc-c++ \
         git \
         glibc-langpack-en \
+        gnupg2 \
         java-21-openjdk-devel \
         latexmk \
         libffi-devel \
@@ -21,6 +23,7 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=devel \
         mysql-devel \
         openssl-devel \
         patch \
+        pinentry \
         postgresql-devel \
         python3-attrs \
         python3-devel \
@@ -33,6 +36,7 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=devel \
         R-devel \
         readline-devel \
         rpm-build \
+        rpm-sign \
         sqlite-devel \
         tar \
         texlive-* \
