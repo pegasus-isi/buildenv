@@ -25,7 +25,6 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=devel \
         patch \
         pinentry \
         postgresql-devel \
-        python3-attrs \
         python3-devel \
         python3-GitPython \
         python3-pyOpenSSL \

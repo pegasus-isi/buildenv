@@ -25,7 +25,6 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=powertools \
         openssl-devel \
         patch \
         postgresql-devel \
-        python3-attrs \
         python3-devel \
         python3-GitPython \
         python3-pyOpenSSL \

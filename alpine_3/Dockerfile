@@ -60,7 +60,6 @@ RUN apk add --update \
          openjdk8 \
          openssl-dev \
          perl \
-         py3-attrs \
          py3-pip \
          py3-setuptools \
          py3-tox \

@@ -21,7 +21,6 @@ RUN apt-get -y update && \
         locales-all \
         make \
         procps \
-        python3-attr \
         python3-dev \
         python3-git \
         python3-openssl \

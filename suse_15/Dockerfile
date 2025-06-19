@@ -20,7 +20,6 @@ RUN zypper install -y \
         mpich-devel \
         patch \
         postgresql-devel \
-        python3-attrs \
         python3-devel \
         python3-GitPython \
         python3-pip \
