@@ -31,7 +31,6 @@ RUN apt-get -y update && \
         python3-setuptools-scm \
         python3-sphinx \
         python3-yaml \
-        r-base \
         tar \
         texlive-fonts-recommended \
         texlive-latex-base \

@@ -66,8 +66,6 @@ RUN apk add --update \
          py3-yaml \
          py3-gitpython \
          python3-dev \
-         R \
-         R-dev \
          rust \
          sqlite-dev \
          wget

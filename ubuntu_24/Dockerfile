@@ -37,7 +37,6 @@ RUN apt-get -y update && \
         python3-venv \
         python3-yaml \
         tox \
-        r-base \
         tar \
         wget
 

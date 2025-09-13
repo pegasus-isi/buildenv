@@ -28,7 +28,6 @@ RUN zypper install -y \
         python3-pytest \
         python3-setuptools \
         python3-setuptools_scm \
-        R-base-devel \
         readline-devel \
         rpm-build \
         sqlite3-devel \

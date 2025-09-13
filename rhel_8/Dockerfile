@@ -32,7 +32,6 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=powertools \
         python3-pyyaml \
         python3-setuptools \
         python3-setuptools_scm \
-        R-devel \
         readline-devel \
         rpm-build \
         rpm-sign \
