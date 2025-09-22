@@ -30,6 +30,9 @@ RUN dnf -y install --allowerasing --nobest \
         python3-pyOpenSSL \
         python3-pyyaml \
         python3-setuptools \
+        python3.13-devel \
+        python3.13-pip \
+        python3.13-setuptools \
         readline-devel \
         rpm-build \
         rpm-sign \
