@@ -21,13 +21,16 @@ RUN zypper install -y \
         patch \
         postgresql-devel \
         python3-devel \
-        python3-GitPython \
         python3-pip \
         python3-pyaml \
         python3-pyOpenSSL \
         python3-pytest \
+        python3-tox \
         python3-setuptools \
         python3-setuptools_scm \
+        python311-devel \
+        python311-pip \
+        python311-setuptools \
         readline-devel \
         rpm-build \
         sqlite3-devel \
