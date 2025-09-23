@@ -25,6 +25,7 @@ Pegasus Docker Build Images:
     matrix:
     - OS:
       - alpine_3
+      - suse_15
       - deb_10
       - deb_11
       - deb_12
