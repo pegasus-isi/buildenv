@@ -3,7 +3,7 @@ FROM almalinux:10-kitten
 RUN dnf -y update
 RUN dnf -y install epel-release
 
-RUN dnf -y install --allowerasing --nobest \
+RUN dnf -y install --setopt=install_weak_deps=false --allowerasing --nobest \
         ant-apache-regexp \
         ant-junit \
         bc \
@@ -29,6 +29,7 @@ RUN dnf -y install --allowerasing --nobest \
         python3-GitPython \
         python3-pyOpenSSL \
         python3-pyyaml \
+        python3-pip \
         python3-setuptools \
         readline-devel \
         rpm-build \
