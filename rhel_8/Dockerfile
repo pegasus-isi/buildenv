@@ -45,7 +45,7 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=powertools \
         wget \
         which \
         zlib-devel && \
-    pip3 install tox
+    python3.12 -m pip install tox
 
 ENV PATH=/usr/lib64/mpich/bin:/usr/local/bin:/usr/bin:/bin
 

@@ -45,7 +45,7 @@ RUN dnf -y install --setopt=install_weak_deps=false --allowerasing --nobest \
         wget \
         which \
         zlib-devel && \
-    pip3 install tox
+    python3.14 -m pip install tox
 
 ENV PATH=/usr/lib64/mpich/bin:/usr/local/bin:/usr/bin:/bin
 

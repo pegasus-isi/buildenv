@@ -46,7 +46,7 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=devel \
         wget \
         which \
         zlib-devel && \
-    pip3 install tox uv
+    python3.12 -m pip install tox uv
 
 ENV PATH=/usr/lib64/mpich/bin:/usr/local/bin:/usr/bin:/bin
 
