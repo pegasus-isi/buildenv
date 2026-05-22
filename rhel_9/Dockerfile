@@ -32,11 +32,11 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=devel \
         python3-pyyaml \
         python3-setuptools \
         python3-setuptools_scm \
-        python3.13-cryptography \
-        python3.13-devel \
-        python3.13-pip \
-        python3.13-pyyaml \
-        python3.13-setuptools \
+        python3.12-cryptography \
+        python3.12-devel \
+        python3.12-pip \
+        python3.12-pyyaml \
+        python3.12-setuptools \
         readline-devel \
         rpm-build \
         rpm-sign \
