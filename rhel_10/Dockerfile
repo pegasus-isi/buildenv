@@ -31,6 +31,11 @@ RUN dnf -y install --setopt=install_weak_deps=false --allowerasing --nobest \
         python3-pyyaml \
         python3-pip \
         python3-setuptools \
+        python3.14-cryptography \
+        python3.14-devel \
+        python3.14-pip \
+        python3.14-pyyaml \
+        python3.14-setuptools \
         readline-devel \
         rpm-build \
         rpm-sign \
