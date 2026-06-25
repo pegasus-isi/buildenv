@@ -50,7 +50,7 @@ ROOTLESS Pegasus Docker Build Images:
   parallel:
     matrix:
     - OS:
-      - alpine_3
+      - rhel_10
   image:
     name: moby/buildkit:rootless
     entrypoint: [""]
