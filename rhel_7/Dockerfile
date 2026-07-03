@@ -7,6 +7,7 @@ RUN yum -y install \
         ant-junit \
         bc \
         bzip2-devel \
+        cmake \
         cryptsetup \
         curl-devel \
         gcc \
@@ -48,7 +49,7 @@ RUN yum -y install \
         which \
         yum-plugin-priorities \
         zlib-devel && \
-    pip3 install tox==3.20.1
+    pip3 install tox==3.20.1 build scikit-build-core
 
 ENV PATH=/usr/lib64/mpich/bin:/usr/local/bin:/usr/bin:/bin
 

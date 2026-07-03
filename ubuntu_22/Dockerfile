@@ -7,6 +7,7 @@ RUN apt-get -y update && \
         apt-utils \
         bc \
         build-essential \
+        cmake \
         createrepo-c \
         curl \
         debhelper \
@@ -23,6 +24,7 @@ RUN apt-get -y update && \
         libssl-dev \
         lintian \
         locales-all \
+        make \
         mpich \
         pinentry-tty \
         python3-dev \
@@ -40,7 +42,7 @@ RUN apt-get -y update && \
         wget
 
 # Documentation
-RUN pip3 install --upgrade pip setuptools==45.3.0 tox
+RUN pip3 install --upgrade pip setuptools==45.3.0 tox build scikit-build-core
 
 # Set Timezone
 RUN cp /usr/share/zoneinfo/America/Los_Angeles /etc/localtime

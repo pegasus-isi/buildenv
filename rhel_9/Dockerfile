@@ -8,6 +8,7 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=devel \
         ant-junit \
         bc \
         bzip2-devel \
+        cmake \
         createrepo \
         curl-devel \
         gcc \
@@ -46,7 +47,7 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=devel \
         wget \
         which \
         zlib-devel && \
-    python3.12 -m pip install tox uv
+    python3.12 -m pip install tox uv build scikit-build-core
 
 ENV PATH=/usr/lib64/mpich/bin:/usr/local/bin:/usr/bin:/bin
 

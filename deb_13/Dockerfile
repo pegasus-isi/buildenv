@@ -6,6 +6,7 @@ RUN apt-get -y update && \
         ant-optional \
         bc \
         build-essential \
+        cmake \
         curl \
         debhelper \
         default-jdk \
@@ -31,6 +32,8 @@ RUN apt-get -y update && \
         python3-setuptools-scm \
         python3-sphinx \
         python3-yaml \
+        python3-build \
+        python3-scikit-build-core \
         tox \
         tar \
         texlive-fonts-recommended \

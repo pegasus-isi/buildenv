@@ -6,6 +6,7 @@ RUN apt-get -y update && \
         ant-optional \
         bc \
         build-essential \
+        cmake \
         curl \
         debhelper \
         default-jdk \
@@ -39,7 +40,7 @@ RUN apt-get -y update && \
     apt-get -y clean
 
 # Documentation
-RUN pip3 install --break-system-packages --upgrade pip setuptools==66.1.1 tox
+RUN pip3 install --break-system-packages --upgrade pip setuptools==66.1.1 tox build scikit-build-core
 
 # Set Timezone
 RUN cp /usr/share/zoneinfo/America/Los_Angeles /etc/localtime

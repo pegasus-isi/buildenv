@@ -7,6 +7,7 @@ RUN apt-get -y update && \
         apt-utils \
         bc \
         build-essential \
+        cmake \
         createrepo-c \
         curl \
         debhelper \
@@ -23,6 +24,7 @@ RUN apt-get -y update && \
         libssl-dev \
         lintian \
         locales-all \
+        make \
         mpich \
         pinentry-tty \
         python3-dev \
@@ -36,6 +38,8 @@ RUN apt-get -y update && \
         python3-sphinx \
         python3-venv \
         python3-yaml \
+        python3-build \
+        python3-scikit-build-core \
         tox \
         tar \
         wget

@@ -7,6 +7,7 @@ RUN zypper install -y \
         ant-junit \
         bc \
         bzip2 \
+        cmake \
         gcc \
         gcc-c++ \
         git \
@@ -38,7 +39,7 @@ RUN zypper install -y \
         wget \
         which \
         zlib-devel && \
-    python3 -m pip install tox
+    python3 -m pip install tox build scikit-build-core
 
 ENV PATH=/usr/lib64/mpi/gcc/mpich/bin:/usr/local/bin:/usr/bin:/bin
 
