@@ -46,6 +46,7 @@ RUN apk add --update \
          apache-ant \
          bash \
          cargo \
+         cmake \
          curl \
          g++ \
          gcc \
@@ -69,3 +70,5 @@ RUN apk add --update \
          rust \
          sqlite-dev \
          wget
+
+RUN pip3 install --break-system-packages build scikit-build-core
