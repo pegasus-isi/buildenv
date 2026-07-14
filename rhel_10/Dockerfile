@@ -15,6 +15,7 @@ RUN dnf -y install --setopt=install_weak_deps=false --allowerasing --nobest \
         git \
         glibc-langpack-en \
         gnupg2 \
+        graphviz \
         java-21-openjdk-devel \
         latexmk \
         libffi-devel \

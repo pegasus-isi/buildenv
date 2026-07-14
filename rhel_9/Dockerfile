@@ -15,6 +15,7 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=devel \
         git \
         glibc-langpack-en \
         gnupg2 \
+        graphviz \
         java-21-openjdk-devel \
         latexmk \
         libffi-devel \

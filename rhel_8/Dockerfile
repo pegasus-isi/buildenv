@@ -15,6 +15,7 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=powertools \
         gcc-c++ \
         git \
         glibc-langpack-en \
+        graphviz \
         java-17-openjdk-devel \
         libffi-devel \
         libxml2-devel \
