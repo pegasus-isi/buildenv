@@ -3,10 +3,6 @@ default:
     - env
     - echo "${DOCKERHUB_TOKEN}" | docker login --username "${DOCKERHUB_USER}" --password-stdin
 
-workflow:
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "main"'
-
 .retry-and-timeout: &retry-and-timeout
   retry:
     max: 2
