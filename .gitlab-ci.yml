@@ -7,37 +7,41 @@ default:
   retry:
     max: 2
     when:
-    - job_execution_timeout
-    - stuck_or_timeout_failure
-    - api_failure
-    - runner_system_failure
-    - script_failure
-    - unknown_failure
+      - job_execution_timeout
+      - stuck_or_timeout_failure
+      - api_failure
+      - runner_system_failure
+      - script_failure
+      - unknown_failure
   timeout: 120 minutes
 
 stages:
-- build
+  - build
 
 Pegasus Docker Build Images:
   <<: *retry-and-timeout
   stage: build
   parallel:
     matrix:
-    - OS:
-      - alpine_3
-      - suse_15
-      - deb_11
-      - deb_12
-      - deb_13
-      - rhel_8
-      - rhel_9
-      - rhel_10
-      - ubuntu_22
-      - ubuntu_24
-      - ubuntu_26
+      - OS:
+          - alpine_3
+          - suse_15
+          - deb_11
+          - deb_12
+          - deb_13
+          - rhel_8
+          - rhel_9
+          - rhel_10
+          - ubuntu_22
+          - ubuntu_24
+          - ubuntu_26
   script:
-  - cd ${OS}
-  - docker buildx build --builder multiarch-builder --platform linux/amd64,linux/arm64 --tag pegasus/buildenv:${OS} --progress plain --push .
+    - cd ${OS}
+    - docker buildx build --builder multiarch-builder --platform linux/amd64,linux/arm64 --tag pegasus/buildenv:${OS} --progress plain --push .
   tags:
-  - docker-cli
-  - docker-multiarch
+    - docker-cli
+    - docker-multiarch
+  rules:
+    - changes:
+        paths:
+          - ${OS}/**/*
