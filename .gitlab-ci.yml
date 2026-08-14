@@ -23,7 +23,7 @@ Pegasus Docker Build Images:
   stage: build
   parallel:
     matrix:
-      - OS:
+      - TAG:
           - alpine_3
           - suse_15
           - deb_11
@@ -36,12 +36,31 @@ Pegasus Docker Build Images:
           - ubuntu_24
           - ubuntu_26
   script:
-    - cd ${OS}
-    - docker buildx build --builder multiarch-builder --platform linux/amd64,linux/arm64 --tag pegasus/buildenv:${OS} --progress plain --push .
+    - cd ${TAG}
+    - docker buildx build --builder multiarch-builder --platform linux/amd64,linux/arm64 --tag pegasus/buildenv:${TAG} --progress plain --push .
   tags:
     - docker-cli
     - docker-multiarch
   rules:
     - changes:
         paths:
-          - ${OS}/**/*
+          - ${TAG}/**/*
+
+Other Images:
+  <<: *retry-and-timeout
+  stage: build
+  parallel:
+    matrix:
+      - REPO:
+          - claude-runner
+        DIR: claude-runner
+  script:
+    - cd ${DIR}
+    - docker buildx build --builder multiarch-builder --platform linux/amd64,linux/arm64 --tag pegasus/${REPO} --progress plain --push .
+  tags:
+    - docker-cli
+    - docker-multiarch
+  rules:
+    - changes:
+        paths:
+          - ${DIR}/**/*
