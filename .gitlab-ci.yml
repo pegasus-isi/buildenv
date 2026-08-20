@@ -54,6 +54,9 @@ Other Images:
       - REPO:
           - claude-runner
         DIR: claude-runner
+      - REPO:
+          - devcontainer
+        DIR: devcontainer
   script:
     - cd ${DIR}
     - docker buildx build --builder multiarch-builder --platform linux/amd64,linux/arm64 --tag pegasus/${REPO} --progress plain --push .
