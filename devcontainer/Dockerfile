@@ -72,7 +72,8 @@ apt-get -y install --no-install-recommends \
     python3-scikit-build-core \
     texlive-latex-extra \
     tox \
-    zlib1g-dev
+    zlib1g-dev \
+    golang-go
 
 # uv + dev tool venvs
 curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR=/usr/local/bin sh
