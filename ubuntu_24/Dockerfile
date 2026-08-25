@@ -42,7 +42,8 @@ RUN apt-get -y update && \
         python3-scikit-build-core \
         tox \
         tar \
-        wget
+        wget \
+        golang-go
 
 # Set Timezone
 RUN cp /usr/share/zoneinfo/America/Los_Angeles /etc/localtime

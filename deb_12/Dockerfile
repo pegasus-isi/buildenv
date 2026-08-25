@@ -36,6 +36,7 @@ RUN apt-get -y update && \
         texlive-fonts-recommended \
         texlive-latex-base \
         wget \
+        golang-go \
     && \
     apt-get -y clean
 

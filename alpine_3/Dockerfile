@@ -69,6 +69,7 @@ RUN apk add --update \
          python3-dev \
          rust \
          sqlite-dev \
-         wget
+         wget \
+         go
 
 RUN pip3 install --break-system-packages build scikit-build-core

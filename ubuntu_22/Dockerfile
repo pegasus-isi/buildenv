@@ -39,7 +39,8 @@ RUN apt-get -y update && \
         python3-venv \
         python3-yaml \
         tar \
-        wget
+        wget \
+        golang-go
 
 # Documentation
 RUN pip3 install --upgrade pip setuptools==45.3.0 tox build scikit-build-core

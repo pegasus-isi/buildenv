@@ -46,7 +46,8 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=powertools \
         tar \
         wget \
         which \
-        zlib-devel && \
+        zlib-devel \
+        golang && \
     python3.12 -m pip install tox build scikit-build-core
 
 ENV PATH=/usr/lib64/mpich/bin:/usr/local/bin:/usr/bin:/bin
