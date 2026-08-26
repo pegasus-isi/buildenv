@@ -41,8 +41,9 @@ RUN apt-get -y update && \
     wget "https://dl.google.com/go/${LATEST_GO}.linux-${ARCH}.tar.gz" && \
     tar -C /usr/local -xzf "${LATEST_GO}.linux-${ARCH}.tar.gz" && \
     rm "${LATEST_GO}.linux-${ARCH}.tar.gz" && \
-    echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/bash.bashrc && \
     apt-get -y clean
+
+ENV PATH=/usr/local/go/bin:$PATH
 
 # Documentation
 RUN pip3 install --break-system-packages --upgrade pip setuptools==66.1.1 tox build scikit-build-core
