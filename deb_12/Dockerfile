@@ -35,9 +35,13 @@ RUN apt-get -y update && \
         tar \
         texlive-fonts-recommended \
         texlive-latex-base \
-        wget \
-        golang-go \
-    && \
+        wget && \
+    LATEST_GO=$(curl -sSL "https://go.dev/VERSION?m=text" | head -n 1) && \
+    ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/') && \
+    wget "https://dl.google.com/go/${LATEST_GO}.linux-${ARCH}.tar.gz" && \
+    tar -C /usr/local -xzf "${LATEST_GO}.linux-${ARCH}.tar.gz" && \
+    rm "${LATEST_GO}.linux-${ARCH}.tar.gz" && \
+    echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/bash.bashrc && \
     apt-get -y clean
 
 # Documentation
@@ -45,4 +49,3 @@ RUN pip3 install --break-system-packages --upgrade pip setuptools==66.1.1 tox bu
 
 # Set Timezone
 RUN cp /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
-

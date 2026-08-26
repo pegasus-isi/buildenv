@@ -2,6 +2,9 @@ FROM ubuntu:24.04
 
 RUN apt-get -y update && \
     DEBIAN_FRONTEND=noninteractive apt-get -y install \
+        software-properties-common && \
+    add-apt-repository -y ppa:longsleep/golang-backports && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y install \
         ant \
         ant-optional \
         apt-utils \
