@@ -31,6 +31,7 @@ RUN apt-get -y update && \
         python3-setuptools \
         python3-setuptools-scm \
         python3-sphinx \
+        python3-venv \
         python3-yaml \
         python3-build \
         python3-scikit-build-core \
