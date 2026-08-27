@@ -47,7 +47,7 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=devel \
         wget \
         which \
         zlib-devel && \
-    python3.12 -m pip install tox uv build scikit-build-core
+    python3.12 -m pip install tox uv build scikit-build-core auditwheel patchelf ninja
 
 ENV PATH=/usr/lib64/mpich/bin:/usr/local/bin:/usr/bin:/bin
 
