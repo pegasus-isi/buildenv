@@ -49,7 +49,7 @@ RUN yum -y install \
         which \
         yum-plugin-priorities \
         zlib-devel && \
-    pip3 install tox==3.20.1 build scikit-build-core
+    pip3 install tox==3.20.1 build scikit-build-core auditwheel patchelf ninja
 
 ENV PATH=/usr/lib64/mpich/bin:/usr/local/bin:/usr/bin:/bin
 

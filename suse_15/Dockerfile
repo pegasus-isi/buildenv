@@ -41,7 +41,7 @@ RUN zypper install -y \
         which \
         zlib-devel \
         go && \
-    python3.11 -m pip install tox build scikit-build-core
+    python3.11 -m pip install tox build scikit-build-core auditwheel patchelf ninja
 
 ENV PATH=/usr/lib64/mpi/gcc/mpich/bin:/usr/local/bin:/usr/bin:/bin
 

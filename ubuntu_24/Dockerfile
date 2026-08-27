@@ -48,5 +48,7 @@ RUN apt-get -y update && \
         wget \
         golang-go
 
+RUN pip3 install --break-system-packages auditwheel patchelf ninja
+
 # Set Timezone
 RUN cp /usr/share/zoneinfo/America/Los_Angeles /etc/localtime

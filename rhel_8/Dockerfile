@@ -48,7 +48,7 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=powertools \
         which \
         zlib-devel \
         golang && \
-    python3.12 -m pip install tox build scikit-build-core
+    python3.12 -m pip install tox build scikit-build-core auditwheel patchelf ninja
 
 ENV PATH=/usr/lib64/mpich/bin:/usr/local/bin:/usr/bin:/bin
 

@@ -30,4 +30,4 @@ RUN apk add --update \
          wget \
          go
 
-RUN pip3 install --break-system-packages build scikit-build-core
+RUN pip3 install --break-system-packages build scikit-build-core auditwheel patchelf ninja

@@ -46,6 +46,8 @@ RUN apt-get -y update && \
 # Documentation
 # RUN pip3 install --break-system-packages --upgrade pip setuptools==66.1.1 tox
 
+RUN pip3 install --break-system-packages auditwheel patchelf ninja
+
 # Set Timezone
 RUN cp /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 
