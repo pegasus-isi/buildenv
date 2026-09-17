@@ -17,6 +17,7 @@ RUN apk add --update \
          make \
          musl-dev \
          openjdk8 \
+         openmpi-dev \
          openssl-dev \
          perl \
          py3-pip \
