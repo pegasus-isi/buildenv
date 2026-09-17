@@ -21,6 +21,7 @@ RUN apt-get -y update && \
         lintian \
         locales-all \
         make \
+        mpich \
         procps \
         python3-dev \
         python3-git \
