@@ -2,9 +2,6 @@ FROM opensuse/leap:15
 
 RUN zypper update -y
 
-# glibc-devel-static: needed to build statically-linked
-# pegasus-kickstart/pegasus-cluster/pegasus-keg (libstdc++.a already ships in
-# gcc-c++, no separate static package for it on openSUSE).
 RUN zypper install -y \
         --oldpackage libncurses6-6.1-150000.5.30.1 \
         ant-apache-regexp \
@@ -15,7 +12,6 @@ RUN zypper install -y \
         gcc \
         gcc-c++ \
         git \
-        glibc-devel-static \
         java-17-openjdk \
         libffi-devel \
         libmysqlcppconn-devel \

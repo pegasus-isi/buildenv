@@ -4,8 +4,6 @@ RUN dnf -y update
 RUN echo 'module_hotfixes=true' >>/etc/yum.repos.d/Rocky-PowerTools.repo
 RUN dnf -y install epel-release
 
-# glibc-static/libstdc++-static: needed to build statically-linked
-# pegasus-kickstart/pegasus-cluster/pegasus-keg.
 RUN dnf -y install --allowerasing --nobest --enablerepo=powertools \
         ant-apache-regexp \
         ant-junit \
@@ -18,11 +16,9 @@ RUN dnf -y install --allowerasing --nobest --enablerepo=powertools \
         gcc-c++ \
         git \
         glibc-langpack-en \
-        glibc-static \
         graphviz \
         java-17-openjdk-devel \
         libffi-devel \
-        libstdc++-static \
         libxml2-devel \
         libxslt-devel \
         make \

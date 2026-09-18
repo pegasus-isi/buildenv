@@ -3,8 +3,6 @@ FROM almalinux:10-kitten
 RUN dnf -y update
 RUN dnf -y install epel-release
 
-# glibc-static/libstdc++-static: needed to build statically-linked
-# pegasus-kickstart/pegasus-cluster/pegasus-keg.
 RUN dnf -y install --setopt=install_weak_deps=false --allowerasing --nobest \
         ant-apache-regexp \
         ant-junit \
@@ -17,13 +15,11 @@ RUN dnf -y install --setopt=install_weak_deps=false --allowerasing --nobest \
         gcc-c++ \
         git \
         glibc-langpack-en \
-        glibc-static \
         gnupg2 \
         graphviz \
         java-21-openjdk-devel \
         latexmk \
         libffi-devel \
-        libstdc++-static \
         make \
         mpich-devel \
         mariadb-devel \
